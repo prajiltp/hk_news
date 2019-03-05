@@ -13,5 +13,5 @@
             .btn-group.btn-group-sm{"aria-label" => "Actions", :role => "group"}
               - if current_user && current_user.can_edit_or_delete?(blog)
                 = link_to 'Edit', edit_blog_path(blog)
-
+                |
                 = link_to 'Remove', blog, method: :delete, data: { confirm: 'Are you sure?' }

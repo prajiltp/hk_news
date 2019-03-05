@@ -3,4 +3,6 @@ class Blog < ApplicationRecord
   has_many :messages
 
   validates :title, :description, presence: true
+
+  self.per_page = 12
 end
