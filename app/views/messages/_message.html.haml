@@ -1,0 +1,16 @@
+.d-flex.justify-content-between
+  %p
+    %strong Comment:
+    = message.comment
+    / Reply need to implement
+    / = message.replies
+    / %H5 Reply
+    / = form_for([@blog, @blog.messages.build(parent_id: message.id)], remote: true) do |f|
+    /   .dive.contaner
+    /     = f.text_field :comment, class: 'form-control'
+    /     = f.hidden_field :parent_id, value: message.id
+
+    /     .actions
+    /       = f.submit 'Post'
+  .comment-author
+    = message.author.email

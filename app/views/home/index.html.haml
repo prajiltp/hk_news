@@ -1,0 +1,5 @@
+- unless current_user
+  = link_to 'Write your blog by Signing In', new_user_session_path
+
+%h3
+  = render 'blogs/blog_list'

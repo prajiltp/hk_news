@@ -1,0 +1,20 @@
+.internal-container
+  .row.kz-row.two-column
+    .container.kz-container
+      - if @blog.title.present?
+        %h2.title.text-center
+          = @blog.title
+        %h6.text-center
+          = @blog.author.email
+      .col-sm-8.col-sm-offset-2.text-justify
+        = raw(@blog.description)
+  %h2
+    Comments
+    #com
+      = render @blog.messages.main_threads
+  - if current_user
+    %h2
+      = render "messages/form"
+  - else
+    %h2
+      Sign in, to post comment
